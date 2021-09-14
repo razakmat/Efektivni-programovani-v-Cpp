@@ -1,1 +1,6 @@
-== Test branch for tutorial1
+= Test branch for tutorial1
+
+== Instructions
+
+* Edit `main.cpp` soruce file.
+* Check project *CI jobs* if the program was *sucessfully built and executed*.
