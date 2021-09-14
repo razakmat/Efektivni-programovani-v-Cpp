@@ -1,0 +1,15 @@
+image: gitlab.fit.cvut.cz:5000/ict/alpine-docker-images/base:3.14
+
+main:
+    stage: test
+    script:
+        - apk add build-base
+        - apk add boost1.75-dev
+        - g++ --version
+        - g++ -o main main.cpp
+        - ./main
+#        - ./main --log_level=all --result_code=no 2>&1 | tee main.log
+#    artifacts:
+#        paths:
+#            - main.log
+#        expire_in: 1 week
