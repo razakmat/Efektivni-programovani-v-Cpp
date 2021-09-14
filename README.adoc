@@ -1,0 +1,6 @@
+= NI-EPC or NIE-EPC student project
+
+== How to use?
+
+* Do not work directly in the master branch.
+* Each assignment, that is tutorial assignments and semestral work, have its own branch to work with.
