@@ -4,4 +4,4 @@
 
 * Edit `main.cpp` soruce file.
 * Check project *CI jobs* if the program was *sucessfully built and executed*.
-* Create new merge request.
+* Create a new merge request.
