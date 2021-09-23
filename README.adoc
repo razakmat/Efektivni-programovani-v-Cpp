@@ -4,5 +4,5 @@
 
 CAUTION: *Do not work* directly on the *master branch*.
 
-* Each assignment (_programming assignments_ and _semestral work_) has its *own branch* to work with.
+* Each assignment (_practicals assignments_ and _semestral work_) has its *own branch* to work with.
 * Switch to the corresponding branch and *update files*.
