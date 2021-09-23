@@ -1,3 +1,5 @@
 = Branch for semestral work
 
 IMPORTANT: Do not update this file!
+
+IMPORTANT: Do not add (yet) any other file than `optional.h` header!
