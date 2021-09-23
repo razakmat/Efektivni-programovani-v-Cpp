@@ -1,4 +1,4 @@
-= Test branch for Tutorial #1
+= Test branch for Practical #1
 
 == Instructions
 
