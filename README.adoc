@@ -1,0 +1,3 @@
+= Branch for semestral work
+
+IMPORTANT: Do not update this file!
