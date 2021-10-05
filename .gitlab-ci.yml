@@ -8,4 +8,4 @@ main:
         - g++ -c LookupTable.cpp
         - g++ -c test.cpp
         - g++ -o test LookupTable.o test.o
-        - ./test --log_level=all --result-code=no
+        - ./test --log_level=all --result_code=no
