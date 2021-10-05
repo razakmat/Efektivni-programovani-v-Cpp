@@ -5,7 +5,7 @@ main:
     script:
         - apk add build-base
         - apk add boost1.75-dev
-	- g++ -c LookupTable.cpp
-	- g++ -c test.cpp
-	- g++ -o tst LookupTable.o test.o
-	- ./test --log_level=all --result-code=no
+        - g++ -c LookupTable.cpp
+        - g++ -c test.cpp
+        - g++ -o test LookupTable.o test.o
+        - ./test --log_level=all --result-code=no
