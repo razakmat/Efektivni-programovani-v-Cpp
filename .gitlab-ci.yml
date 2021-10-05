@@ -1,0 +1,11 @@
+image: gitlab.fit.cvut.cz:5000/ict/alpine-docker-images/base:3.14
+
+main:
+    stage: test
+    script:
+        - apk add build-base
+        - apk add boost1.75-dev
+	- g++ -c LookupTable.cpp
+	- g++ -c test.cpp
+	- g++ -o tst LookupTable.o test.o
+	- ./test --log_level=all --result-code=no
