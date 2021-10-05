@@ -1,1 +1,5 @@
 = Practical #2 programming assignment
+
+* Update `LookupTable.h` and `LookupTable.cpp` files to implement `LookupTable` class with the PIMPL idiom.
+* Check the result of the test program in _CI/CD Pipelines/Jobs_.
+* Create a _merge request_ to indicate final submission of your solution.
