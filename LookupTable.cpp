@@ -1,10 +1,10 @@
 #include <cstdlib>
 #include <string>
-#include <map>
+#include <unordered_map>
 #include "LookupTable.h"
 
 class LookupTable::Impl{
-        std::map<int, std::string> data_;
+        std::unordered_map<int, std::string> data_;
     public:
         void insert(int key, const std::string& name)
         {
