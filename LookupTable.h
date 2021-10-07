@@ -1,8 +1,6 @@
 #ifndef LOOKUPTABLE_H
 #define LOOKUPTABLE_H
 
-#include <cstdlib>
-#include <map>
 #include <string>
 
 class LookupTable
