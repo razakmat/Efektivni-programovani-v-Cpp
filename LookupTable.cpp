@@ -32,10 +32,10 @@ class LookupTable::Impl{
         }
 };
 
-LookupTable:LookupTable()
+LookupTable::LookupTable()
 : m_pimpl( new Impl()) {}
 
-LookupTable:~LookupTable()
+LookupTable::~LookupTable()
 {
     delete m_pimpl;
 }
