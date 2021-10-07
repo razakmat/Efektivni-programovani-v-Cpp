@@ -30,7 +30,7 @@ class LookupTable::Impl{
         {
             data_.clear();
         }
-}
+};
 
 LookupTable:LookupTable()
 : m_pimpl( new Impl()) {}
