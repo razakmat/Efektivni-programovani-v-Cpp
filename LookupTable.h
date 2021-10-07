@@ -7,7 +7,8 @@
 
 class LookupTable
 {
-    std::map<int, std::string> data_;
+    class Impl;
+    Impl * m_pimpl;
 
 public:
     LookupTable() = default;
