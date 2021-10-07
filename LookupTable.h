@@ -11,8 +11,8 @@ class LookupTable
     Impl * m_pimpl;
 
 public:
-    LookupTable() = default;
-    ~LookupTable() = default;
+    LookupTable();
+    ~LookupTable();
 
     // copy and move semantics deleted for sake of simplicity:
     LookupTable(const LookupTable&) = delete;
