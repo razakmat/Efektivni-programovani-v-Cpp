@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include <string>
-
+#include <map>
 #include "LookupTable.h"
 
 class LookupTable::Impl{
