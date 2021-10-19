@@ -15,3 +15,7 @@ test: $(OBJECTS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
+
+.PHONY: run
+run: test
+	./test --log_level=all --result_code=no
