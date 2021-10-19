@@ -6,4 +6,4 @@ main:
         - apk add build-base
         - apk add boost1.75-dev
         - make
-        - ./test --log_level=all --result_code=no
+        - make run
