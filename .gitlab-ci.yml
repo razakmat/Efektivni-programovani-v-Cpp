@@ -1,0 +1,9 @@
+image: gitlab.fit.cvut.cz:5000/ict/alpine-docker-images/base:3.14
+
+main:
+    stage: test
+    script:
+        - apk add build-base
+        - apk add boost1.75-dev
+        - make
+        - ./test --log_level=all --result_code=no
