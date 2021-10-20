@@ -5,9 +5,13 @@
 #include "PairIntOwner.h"
 
 #include <cstdint>
+#include <iostream>
 
 BOOST_AUTO_TEST_CASE( PairIntOwnerTest )
 {
+    std::cout << "Size of PairIntOwner storage: " << sizeof(PairIntOwner) << std::endl;
+    std::cout << "Alignment of PairIntOwner storage: " << alignof(PairIntOwner) << std::endl;
+    
     PairIntOwner emtpy;
 
     BOOST_TEST( PairInt::constructed() == 0 );
