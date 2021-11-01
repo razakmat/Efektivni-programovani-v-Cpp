@@ -1,0 +1,9 @@
+= Practical #4 programming assignment
+
+* Update `ValuePtr.h` to implement the `PairIntOwner` class.
+* Check the result of the test program in _CI/CD Pipelines/Jobs_.
+* Create a _merge request_ to indicate final submission of your solution.
+
+IMPORTANT: Do not modify any other existing files.
+
+NOTE: See instructions on the Course Pages for details.
