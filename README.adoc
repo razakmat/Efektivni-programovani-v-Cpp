@@ -1,6 +1,6 @@
 = Practical #4 programming assignment
 
-* Update `ValuePtr.h` to implement the `PairIntOwner` class.
+* Update `ValuePtr.h` to implement the `ValuePtr` class template.
 * Check the result of the test program in _CI/CD Pipelines/Jobs_.
 * Create a _merge request_ to indicate final submission of your solution.
 
