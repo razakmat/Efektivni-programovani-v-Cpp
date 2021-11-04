@@ -4,26 +4,37 @@
 template <typename T>
 class ValuePtr
 {
-
+    T* ptr_;
 public:
-    ValuePtr() { }
+    ValuePtr(): ptr_(nullptr) { }
 
-    ValuePtr(T* ptr) { }
+    ValuePtr(T* ptr): ptr_(ptr) { }
 
-    ValuePtr(const ValuePtr& other) { }
+    ValuePtr(const ValuePtr& other)
+    {
+        if (other.get() != nullptr)
+            ptr_ = new T(*other);
+        else ptr_ = nullptr;
+    }
 
-    ValuePtr(ValuePtr&& other) { }
+    ValuePtr(ValuePtr&& other)
+    {
+        if (other.get() != nullptr)
+            ptr_ = new T(std::move(*other));
+        else ptr_ = nullptr;
+    }
 
-    ~ValuePtr() { }
+    ~ValuePtr() { if (ptr_ != nullptr) delete ptr_;}
 
     ValuePtr& operator=(const ValuePtr&) = delete;
     ValuePtr& operator=(ValuePtr&&) = delete;
 
-    T& operator*() { }
+    T& operator*() const { return *ptr_;}
 
-    T* operator->() { }
+    T* operator->() { return ptr_;}
 
-    T* get() { }
+    T* get() const { return ptr_;}
 };
 
 #endif
+
