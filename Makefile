@@ -19,9 +19,9 @@ test_case3: test.cpp X.h
 
 .PHONY: run
 run: all
-    ./test_case1
-    ./test_case2
-    ./test_case3
+	./test_case1
+	./test_case2
+	./test_case3
 
 .PHONY: clean
 clean:
