@@ -11,10 +11,10 @@ test_case1: test.cpp X.h
 	$(CXX) -DCASE1 $(CXXFLAGS) $(LDFLAGS) -o $@ $^ 
 
 test_case2: test.cpp X.h
-	$(CXX) -DCASE1 $(CXXFLAGS) $(LDFLAGS) -o $@ $^ 
+	$(CXX) -DCASE2 $(CXXFLAGS) $(LDFLAGS) -o $@ $^ 
 
 test_case3: test.cpp X.h
-	$(CXX) -DCASE1 $(CXXFLAGS) $(LDFLAGS) -o $@ $^ 
+	$(CXX) -DCASE3 $(CXXFLAGS) $(LDFLAGS) -o $@ $^ 
 
 
 .PHONY: run
