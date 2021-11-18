@@ -22,27 +22,42 @@ public:
 #ifdef CASE1
     X& operator=(const X& other) {
         std::cout << "(CA)";
-        // ... to be implemented
+        if (this != &other) {
+            if ((i_ > 0) && (other.i_ > 0)) i_ = other.i_;
+            else if (other.i_ > 0) i_ = other.i_;
+            else if (i_ > 0) { destroy(); }
+        }
+        return *this;
     }
 
     X& operator=(X&& other) {
         std::cout << "(MA)";
-        // ... to be implemented
+        if (this != &other) {
+            if ((i_ > 0) && (other.i_ > 0)) i_ = std::move(other.i_);
+            else if (other.i_ > 0) i_ = std::move(other.i_);
+            else if (i_ > 0) { destroy(); }
+        }
+        return *this;
     }
 #elif defined CASE2
     X& operator=(const X& other) {
         std::cout << "(CA)";
-        // ... to be implemented
+        X temp(other);
+        swap(temp);
+        return *this;
     }
 
     X& operator=(X&& other) {
         std::cout << "(MA)";
-        // ... to be implemented
+        X temp(std::move(other));
+        swap(temp);
+        return *this;
     }
 #elif defined CASE3
     X& operator=(X other) {
         std::cout << "(UA)";
-        // ... to be implemented
+        swap(other);
+        return *this;
     }
 #endif
 };
