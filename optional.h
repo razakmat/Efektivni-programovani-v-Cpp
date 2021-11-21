@@ -110,6 +110,11 @@ class optional
 
         void reset()
         {
+            if (exist_)
+            {
+                reinterpret_cast<T*>(buffer_)->~T();
+                exist_ = false;
+            }
         }
 
         template <typename... Ts> void emplace(Ts&&... args)
