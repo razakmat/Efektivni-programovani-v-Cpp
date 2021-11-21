@@ -63,6 +63,7 @@ class optional
 
         operator bool() const
         {
+            return exist_;
         }
 
         void swap(optional& other)
