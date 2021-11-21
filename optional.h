@@ -31,6 +31,8 @@ class optional
 
         template <typename... Ts> optional(epc::in_place_t, Ts&&... args)
         {
+            new (buffer_) T(std::forward<Ts>(args)...);
+            exist_ = true;
         }
 
         ~optional()
