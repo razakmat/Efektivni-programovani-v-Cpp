@@ -48,18 +48,22 @@ class optional
         }
         const T* operator->() const
         {
+            return reinterpret_cast<const T*>(buffer_);
         }
 
         T* operator->()
         {
+            return reinterpret_cast<T*>(buffer_);
         }
 
         const T& operator*() const
         {
+            return reinterpret_cast<const T&>(buffer_);
         }
 
         T& operator*()
         {
+            return reinterpret_cast<T&>(buffer_);
         }
 
         operator bool() const
