@@ -119,6 +119,10 @@ class optional
 
         template <typename... Ts> void emplace(Ts&&... args)
         {
+            if (exist_)
+                reinterpret_cast<T*>(buffer_)->~T();
+            new (buffer_) T(std::forward<Ts>(args)...);
+            exist_ = true;
         }
 
 
