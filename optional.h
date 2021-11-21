@@ -23,10 +23,24 @@ class optional
 
         optional(const optional& other)
         {
+            if (other)
+            {
+                new (buffer_) T(*other);
+                exist_ = true;
+            }
+            else
+                exist_ = false;
         }
 
         optional(optional&& other)
         {
+            if (other)
+            {
+                new (buffer_) T(std::move(*other));
+                exist_ = true;
+            }
+            else
+                exist_ = false;
         }
 
         template <typename... Ts> optional(epc::in_place_t, Ts&&... args)
