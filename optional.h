@@ -13,7 +13,7 @@ template <typename T>
 class optional
 {
     private:
-        alignas(T) T buffer_[ sizeof(T) ];
+        alignas(T) unsigned char buffer_[ sizeof(T) ];
         bool exist_;
 
     public:
@@ -29,12 +29,13 @@ class optional
         {
         }
 
-        template <typename... Ts> optional(Ts&&... args)
+        template <typename... Ts> optional(epc::in_place_t, Ts&&... args)
         {
         }
 
         ~optional()
         {
+            if (exist_) reinterpret_cast<T*>(buffer_)->~T();
         }
 
         optional& operator=(const optional& other)
@@ -84,13 +85,5 @@ class optional
 template <typename T> void swap(optional<T>& a, optional<T>& b)
 {
 }
-
-}
-
-using namespace std;
-
-int main() {
-
-
 
 }
