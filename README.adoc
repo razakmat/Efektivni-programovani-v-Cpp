@@ -1,0 +1,9 @@
+= Practical #6 programming assignment
+
+* Update `X.h` to implement `make_X` function template in all the required variants.
+* Check the result of the test program in _CI/CD Pipelines/Jobs_.
+* Create a _merge request_ to indicate final submission of your solution.
+
+IMPORTANT: Do not modify any other existing files.
+
+NOTE: See instructions on the Course Pages for details.
