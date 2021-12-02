@@ -28,7 +28,7 @@ X make_X(Ts&&... params)
 template <typename... Ts>
 X make_X(Ts&&... params)
 {
-    X temp(X(in_place_t{},std::forward<Ts>(params)...));
+    X temp(in_place_t{},std::forward<Ts>(params)...);
     return temp;
 }
 
@@ -37,7 +37,7 @@ X make_X(Ts&&... params)
 template <typename... Ts>
 X make_X(Ts&&... params)
 {
-    X temp(X(in_place_t{},std::forward<Ts>(params)...));
+    X temp(in_place_t{},std::forward<Ts>(params)...);
     return std::move(temp);
 }
 
