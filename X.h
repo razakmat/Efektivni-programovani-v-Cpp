@@ -20,7 +20,7 @@ struct X
 template <typename... Ts>
 X make_X(Ts&&... params)
 {
-    // ... to be implemented
+    return X(in_place_t{},std::forward<Ts>(params)...);
 }
 
 #elif defined CASE2
@@ -28,7 +28,8 @@ X make_X(Ts&&... params)
 template <typename... Ts>
 X make_X(Ts&&... params)
 {
-    // ... to be implemented
+    X temp(X(in_place_t{},std::forward<Ts>(params)...));
+    return temp;
 }
 
 #elif defined CASE3
@@ -36,7 +37,8 @@ X make_X(Ts&&... params)
 template <typename... Ts>
 X make_X(Ts&&... params)
 {
-    // ... to be implemented
+    X temp(X(in_place_t{},std::forward<Ts>(params)...));
+    return std::move(temp);
 }
 
 #endif
