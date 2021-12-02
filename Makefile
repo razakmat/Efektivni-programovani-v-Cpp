@@ -6,7 +6,7 @@ CXXFLAGS += -O0 -g
 
 .PHONY: all
 all: test_case1_enabled test_case2_enabled test_case3_enabled \
-	test_case1_disabled test_case2_disabled test_case3_disabled \
+	test_case1_disabled test_case2_disabled test_case3_disabled 
 
 test_case1_enabled: test.cpp X.h
 	$(CXX) -DCASE1 $(CXXFLAGS) $(LDFLAGS) -o $@ $< 
