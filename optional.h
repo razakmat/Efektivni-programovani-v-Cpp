@@ -57,8 +57,11 @@ class optional
         optional& operator=(const optional& other)
         {
             if (this != &other) {
-                if (exist_ && other) *buffer_ = other;
-                else if (other) new (buffer_) T(*other);
+                if (exist_ && other) reinterpret_cast<T&>(buffer_) = *other;
+                else if (other) {
+                    new (buffer_) T(*other);
+                    exist_ = true;
+                }
                 else if (exist_) {
                     reinterpret_cast<T*>(buffer_)->~T(); 
                     exist_ = false; 
@@ -70,8 +73,12 @@ class optional
         optional& operator=(optional&& other)
         {
             if (this != &other) {
-                if (exist_ && other) *buffer_ = std::move(other);
-                else if (other) new (buffer_) T(std::move(*other));
+                if (exist_ && other) 
+                    reinterpret_cast<T&>(buffer_) = std::move(*other);
+                else if (other) {
+                    new (buffer_) T(std::move(*other));
+                    exist_ = true;
+                }
                 else if (exist_) {
                     reinterpret_cast<T*>(buffer_)->~T(); 
                     exist_ = false; 
