@@ -113,6 +113,25 @@ class optional
 
         void swap(optional& other)
         {
+            if (this != &other) {
+                if (exist_ && other) {
+                    using std::swap;
+                    swap(**this, *other);
+                }
+                else if (other) {
+                    new (buffer_) T(std::move(*other));
+                    exist_ = true;
+                    other->~T();
+                    other.exist_ = false;
+
+                }
+                else if (exist_) {
+                    new (reinterpret_cast<void*>(&other)) T(std::move(**this));
+                    other.exist_ = true;
+                    reinterpret_cast<T*>(buffer_)->~T();
+                    exist_ = false;
+                }
+            }
         }
 
         void reset()
@@ -137,6 +156,7 @@ class optional
 
 template <typename T> void swap(optional<T>& a, optional<T>& b)
 {
+    a.swap(b);
 }
 
 }
