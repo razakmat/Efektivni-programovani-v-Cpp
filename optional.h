@@ -71,7 +71,7 @@ class optional
         {
             if (this != &other) {
                 if (exist_ && other) *buffer_ = std::move(other);
-                else if (other) new (buffer_) T(std::(move(*other));
+                else if (other) new (buffer_) T(std::move(*other));
                 else if (exist_) {
                     reinterpret_cast<T*>(buffer_)->~T(); 
                     exist_ = false; 
