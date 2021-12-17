@@ -1,6 +1,3 @@
-#include <iostream>
-#include <string>
-
 // header file optional.h
 
 namespace epc {
