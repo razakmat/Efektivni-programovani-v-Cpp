@@ -1,4 +1,5 @@
 = NI-EPC or NIE-EPC student project
+- Efektivní programování v C++
 
 == How to use?
 
